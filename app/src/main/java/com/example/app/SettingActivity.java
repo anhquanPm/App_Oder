@@ -1,20 +1,28 @@
 package com.example.app;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-public class FoodList extends AppCompatActivity {
+import com.google.android.material.tabs.TabLayout;
+
+public class SettingActivity extends AppCompatActivity {
+
+    private TabLayout mTabLayout;
+    private ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_food_list);
+        setContentView(R.layout.activity_setting);
+        getView();
 
         if(getSupportActionBar() != null){
-            getSupportActionBar().setTitle("Danh sách món ăn");
+            getSupportActionBar().setTitle("Cài Đặt");
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xff00DDED));
         }
@@ -31,4 +39,15 @@ public class FoodList extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    private void getView(){
+        mTabLayout = findViewById(R.id.tab_layout);
+        mViewPager = findViewById(R.id.view_pager);
+
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(),
+                FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        mViewPager.setAdapter(viewPagerAdapter);
+        mTabLayout.setupWithViewPager(mViewPager);
+    }
+
 }

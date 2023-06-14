@@ -6,6 +6,8 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.google.android.material.tabs.TabLayout;
+
 public class DinnerTable extends AppCompatActivity {
 
     @Override

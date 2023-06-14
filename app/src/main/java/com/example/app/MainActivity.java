@@ -3,15 +3,12 @@ package com.example.app;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-
-import com.google.android.material.button.MaterialButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -54,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.menu1) {
             // Xử lý sự kiện khi người dùng nhấn nút mũi tên quay lại trên ActionBar
             // Ví dụ: Đóng Activity, hiển thị thông báo, ...
-            Intent intent = new Intent(MainActivity.this, FoodList.class);
+            Intent intent = new Intent(MainActivity.this, SettingActivity.class);
             startActivity(intent);
             return true;
         }
