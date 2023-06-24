@@ -13,9 +13,6 @@
         android:theme="@style/Theme.App"
         tools:targetApi="31">
         <activity
-            android:name=".SettingActivity"
-            android:exported="false" />
-        <activity
             android:name=".DinnerTable"
             android:exported="false" />
         <activity

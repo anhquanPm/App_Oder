@@ -1,40 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageFood"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/cha_nem"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textFood"
+        android:layout_width="96dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Chả nem"
+        android:textColor="@color/blue"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageFood"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:text="Đơn giá:"
+        android:textColor="@color/blue"
+        app:layout_constraintStart_toEndOf="@+id/imageFood"
+        app:layout_constraintTop_toBottomOf="@+id/textFood" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        android:text="20000"
+        android:textColor="@color/blue"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/textPrice"
+        app:layout_constraintTop_toBottomOf="@+id/textFood" />
+
+    <ImageButton
+        android:id="@+id/buttonAdd"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/add_24"
+        app:layout_constraintStart_toEndOf="@+id/imageFood"
+        app:layout_constraintTop_toBottomOf="@+id/textPrice" />
+
+    <ImageButton
+        android:id="@+id/buttonDelete"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/delete_24"
+        app:layout_constraintStart_toEndOf="@+id/amount"
+        app:layout_constraintTop_toBottomOf="@+id/price" />
+
+    <TextView
+        android:id="@+id/amount"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="1"
+        android:textColor="@color/blue"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/buttonAdd"
+        app:layout_constraintTop_toBottomOf="@+id/textPrice" />
+
+
+    <Button
+        android:id="@+id/buttonShowMore"
+        android:layout_width="40dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/green"
+        android:gravity="center"
+        android:text="Chi tiết"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/textFood"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ThanhTien"
         android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/cha_nem"/>
+        android:layout_height="110dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Thành tiền"
+        android:textColor="@color/blue"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/buttonShowMore"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewName"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:padding="16dp"
-        android:text="chả new "/>
+        android:id="@+id/textTiien"
+        android:layout_width="50dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/blue"
+        android:gravity="center"
+        android:text="200000"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textViewPrice"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:paddingStart="16dp"
-        android:textSize="16sp"
-        android:text="$12"/>
 
-    <ImageButton
-        android:id="@+id/button__id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/icons8_forward_arrow_48"/>
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/icons8_forward_arrow_48"/>
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

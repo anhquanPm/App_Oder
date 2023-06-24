@@ -45,18 +45,4 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.menu1) {
-            // Xử lý sự kiện khi người dùng nhấn nút mũi tên quay lại trên ActionBar
-            // Ví dụ: Đóng Activity, hiển thị thông báo, ...
-            Intent intent = new Intent(MainActivity.this, SettingActivity.class);
-            startActivity(intent);
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
 }
