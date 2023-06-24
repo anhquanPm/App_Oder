@@ -63,6 +63,7 @@ public class FoodAdapter extends BaseAdapter {
             holder.buttonAdd = convertView.findViewById(R.id.buttonAdd);
             holder.buttonDelete = convertView.findViewById(R.id.buttonDelete);
             holder.buttonShowMore = convertView.findViewById(R.id.buttonShowMore);
+            convertView.setTag(holder);
 
         } else {
             holder = (ViewHolder) convertView.getTag();
