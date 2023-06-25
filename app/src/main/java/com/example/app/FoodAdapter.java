@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -41,12 +42,13 @@ public class FoodAdapter extends BaseAdapter {
     private class ViewHolder {
         ImageView imageFood;
         TextView textName, textDonGia, textPrice, textAmount, textThanhTien, textViewTongTien;
-        ImageButton buttonAdd, buttonDelete, buttonShowMore;
+        ImageButton buttonAdd, buttonDelete;
+        Button buttonShowMore;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Food food = (Food) getItem(position);
+        final Food food = foodList.get(position);
         ViewHolder holder;
         if(convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -69,8 +71,10 @@ public class FoodAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
         holder.textName.setText(food.getName());
-        holder.textPrice.setText(food.getPrice());
-        holder.imageFood.setImageResource(food.getResourceIdPicture());
+        holder.textPrice.setText(String.valueOf(food.getPrice()));
+        int resId = ((FoodList)context).getResources().getIdentifier("", "drawable", ((FoodList)context).getPackageName());
+        holder.imageFood.setImageResource(resId);
+//        holder.imageFood.setImageResource(food.getResourceIdPicture());
         return  convertView;
     }
 }

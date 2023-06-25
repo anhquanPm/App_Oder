@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#8A652F"
-    tools:context=".FoodList_Fragment">
+    tools:context=".FoodList">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edt_1"

@@ -1,8 +1,26 @@
 package com.example.app;
 
 public class Food {
-    private String name, description;
-    private int resourceIdPicture, price, id;
+    private String name, description, imageName;
+    private int  price, id;
+
+    public Food(String name, String description, String imageName, int price, int id) {
+        this.name = name;
+        this.description = description;
+        this.imageName = imageName;
+        this.price = price;
+        this.id = id;
+    }
+
+    public Food(String name, String description, String imageName, int price) {
+        this.name = name;
+        this.description = description;
+        this.imageName = imageName;
+        this.price = price;
+    }
+
+    public Food() {
+    }
 
     public String getName() {
         return name;
@@ -20,12 +38,12 @@ public class Food {
         this.description = description;
     }
 
-    public int getResourceIdPicture() {
-        return resourceIdPicture;
+    public String getImageName() {
+        return imageName;
     }
 
-    public void setResourceIdPicture(int resourceIdPicture) {
-        this.resourceIdPicture = resourceIdPicture;
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
     }
 
     public int getPrice() {
@@ -43,13 +61,4 @@ public class Food {
     public void setId(int id) {
         this.id = id;
     }
-
-    public Food(String name, String description, int resourceIdPicture, int price) {
-        this.name = name;
-        this.description = description;
-        this.resourceIdPicture = resourceIdPicture;
-        this.price = price;
-    }
-
-    public Food () {}
 }

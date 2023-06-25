@@ -6,10 +6,11 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class FoodList extends AppCompatActivity {
     ListView lvFood;
-    ArrayList<Food> lsData = new ArrayList<>();
+    List<Food> lsData = new ArrayList<Food>();
     FoodAdapter adapter;
 
     protected void onCreate(Bundle saveInstanceState) {
@@ -19,9 +20,9 @@ public class FoodList extends AppCompatActivity {
 
         FoodDB foodDB = new FoodDB(FoodList.this);
         foodDB.initData();
-        this.lsData = (ArrayList<Food>) foodDB.getData();
+        this.lsData = foodDB.getDataAll();
 
-        this.adapter = new FoodAdapter(this, R.layout.item_food, lsData);
+        this.adapter = new FoodAdapter(FoodList.this, R.layout.item_food, lsData);
         this.lvFood.setAdapter(adapter);
     }
 }

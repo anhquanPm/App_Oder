@@ -30,10 +30,10 @@ public class FoodDB extends SQLiteOpenHelper {
         //Write the creation table query
         String sql = "CREATE TABLE " + TB_NAME +
                 " ("
-                + ID + " INTEGER PRIMARY KEY, "
+                + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + NAME + " TEXT, "
                 + DESCRIPTION + " TEXT, "
-                + PICTURE + " INTEGER, "
+                + PICTURE + " TEXT, "
                 + PRICE + " INTEGER)";
         //execute sql statement
         db.execSQL(sql);
@@ -57,8 +57,8 @@ public class FoodDB extends SQLiteOpenHelper {
         if(count == 0) {
 
             //create data
-            Food food1 = new Food("Bún giò", "Giò lụa, bún, rau sống, nước mắm, mỡ hành, hành lá, hành khô, hành ngâm, đậu phộng, chả, mướp đắng, rau sống, mè rang, tỏi, chanh, ớt, gia vị, nước mắm, tiêu, hành phi.", R.drawable.bun_gio, 25000);
-            Food food2 = new Food("Cá rán", "Cá rán là món ăn nổi tiếng, cá được chiên giòn, ngoài giòn, trong mềm, thường được chế biến với gia vị hấp dẫn, có hương vị đậm đà và thơm ngon.", R.drawable.ca_ran, 30000);
+            Food food1 = new Food("Bún giò", "Giò lụa, bún, rau sống, nước mắm, mỡ hành, hành lá, hành khô, hành ngâm, đậu phộng, chả, mướp đắng, rau sống, mè rang, tỏi, chanh, ớt, gia vị, nước mắm, tiêu, hành phi.", "bun_gio", 25000);
+            Food food2 = new Food("Cá rán", "Cá rán là món ăn nổi tiếng, cá được chiên giòn, ngoài giòn, trong mềm, thường được chế biến với gia vị hấp dẫn, có hương vị đậm đà và thơm ngon.", "caran", 30000);
 //            Food food3 = new Food("Chả nem", "Thịt heo, tôm, nấm mèo, bún tàu, hành, tỏi, bột năng, nước mắm, đường, muối, tiêu, trứng, bánh tráng, lá chuối, dừa, rau sống, dưa leo, giá đỗ, ngò gai, hành phi.", R.drawable.cha_nem, 40000);
 //            Food food4 = new Food("Cuốn", "Bánh tráng, thịt heo hoặc tôm, bún tàu, rau sống, dưa leo, giá đỗ, ngò gai, hành, tỏi, mỡ heo, nước mắm, đường, muối, tiêu, hành phi, mè rang, chả, trứng, dừa, bắp chuối.", R.drawable.cuon, 25000);
 //            Food food5 = new Food("Gà luộc", "Gà luộc là món ăn đơn giản nhưng ngon miệng, gà được luộc chín mềm, thịt mềm mịn, ngọt ngào, thường được dùng kèm nước mắm gừng, hành, tỏi.", R.drawable.ga_luoc, 150000);
@@ -68,8 +68,7 @@ public class FoodDB extends SQLiteOpenHelper {
 //            Food food9 = new Food("Nướng", "Thịt nướng là món ăn truyền thống, thịt được chiên hoặc nướng đến khi chín, có mùi thơm hấp dẫn, vị ngọt mặn, mềm mịn. Thường được ướp gia vị như tỏi, hành, ớt, muối, tiêu, nước mắm, đường.", R.drawable.nuong, 100000);
 
             if(insFood(food1) == -1 || insFood(food2) == -1) {
-                Toast toast = Toast.makeText(this.context, "insert fail", Toast.LENGTH_SHORT);
-                toast.show();
+                Toast.makeText(this.context, "insert fail", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -77,14 +76,14 @@ public class FoodDB extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(NAME, food.getName());
         values.put(DESCRIPTION, food.getDescription());
-        values.put(PICTURE, food.getResourceIdPicture());
+        values.put(PICTURE, food.getImageName());
         values.put(PRICE, food.getPrice());
         //Executing insert data;
         return this.getWritableDatabase().insert(TB_NAME, null, values);
     }
 
     //query data from database
-    public List<Food> getData() {
+    public List<Food> getDataAll() {
         List<Food> foods = new ArrayList<Food>();
         Cursor cursor = this.getReadableDatabase().rawQuery("SELECT * FROM " + TB_NAME, null);
 
@@ -96,7 +95,7 @@ public class FoodDB extends SQLiteOpenHelper {
                     food.setId(cursor.getInt(0));
                     food.setName(cursor.getString(1));
                     food.setDescription(cursor.getString(2));
-                    food.setResourceIdPicture(cursor.getInt(3));
+                    food.setImageName(cursor.getString(3));
                     food.setPrice(cursor.getInt(4));
                     foods.add(food);
                 } while (cursor.moveToNext());
