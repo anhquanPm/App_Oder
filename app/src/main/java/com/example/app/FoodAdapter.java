@@ -44,6 +44,8 @@ public class FoodAdapter extends BaseAdapter {
         TextView textName, textDonGia, textPrice, textAmount, textThanhTien, textViewTongTien;
         ImageButton buttonAdd, buttonDelete;
         Button buttonShowMore;
+        private int SL = 0;
+        private int Price = 1;
     }
 
     @Override
@@ -72,9 +74,29 @@ public class FoodAdapter extends BaseAdapter {
         }
         holder.textName.setText(food.getName());
         holder.textPrice.setText(String.valueOf(food.getPrice()));
+        holder.textViewTongTien.setText(String.valueOf(0));
         int resId = ((FoodList)context).getResources().getIdentifier("", "drawable", ((FoodList)context).getPackageName());
         holder.imageFood.setImageResource(resId);
-//        holder.imageFood.setImageResource(food.getResourceIdPicture());
+
+        holder.buttonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                holder.SL++;
+                holder.textAmount.setText(String.valueOf(holder.SL));
+                holder.textViewTongTien.setText(String.valueOf(holder.SL * food.getPrice()));
+            }
+        });
+
+        holder.buttonDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(holder.SL > 0) {
+                    holder.SL--;
+                    holder.textAmount.setText(String.valueOf(holder.SL));
+                    holder.textViewTongTien.setText(String.valueOf(holder.SL * food.getPrice()));
+                }
+            }
+        });
         return  convertView;
     }
 }
