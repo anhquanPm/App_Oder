@@ -21,6 +21,7 @@ public class FoodDB extends SQLiteOpenHelper {
     public static final String PRICE = "price";
     Context context;
 
+
     public FoodDB(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
         this.context = context;
@@ -57,7 +58,7 @@ public class FoodDB extends SQLiteOpenHelper {
         if(count == 0) {
 
             //create data
-            Food food1 = new Food("Bún giò", "Giò lụa, bún, rau sống, nước mắm, mỡ hành, hành lá, hành khô, hành ngâm, đậu phộng, chả, mướp đắng, rau sống, mè rang, tỏi, chanh, ớt, gia vị, nước mắm, tiêu, hành phi.", "bun_gio", 25000);
+            Food food1 = new Food("Bún giò", "Giò lụa, bún, rau sống, nước mắm, mỡ hành, hành lá, hành khô, hành ngâm, đậu phộng, chả, mướp đắng, rau sống, mè rang, tỏi, chanh, ớt, gia vị, nước mắm, tiêu, hành phi.", "bungio", 25000);
             Food food2 = new Food("Cá rán", "Cá rán là món ăn nổi tiếng, cá được chiên giòn, ngoài giòn, trong mềm, thường được chế biến với gia vị hấp dẫn, có hương vị đậm đà và thơm ngon.", "caran", 30000);
 //            Food food3 = new Food("Chả nem", "Thịt heo, tôm, nấm mèo, bún tàu, hành, tỏi, bột năng, nước mắm, đường, muối, tiêu, trứng, bánh tráng, lá chuối, dừa, rau sống, dưa leo, giá đỗ, ngò gai, hành phi.", R.drawable.cha_nem, 40000);
 //            Food food4 = new Food("Cuốn", "Bánh tráng, thịt heo hoặc tôm, bún tàu, rau sống, dưa leo, giá đỗ, ngò gai, hành, tỏi, mỡ heo, nước mắm, đường, muối, tiêu, hành phi, mè rang, chả, trứng, dừa, bắp chuối.", R.drawable.cuon, 25000);
@@ -66,7 +67,6 @@ public class FoodDB extends SQLiteOpenHelper {
 //            Food food7 = new Food("Lẩu", "Nước lẩu, thịt bò hoặc thịt gà, hải sản (tôm, mực, cá...), rau sống, nấm, đậu hũ, bắp cải, bông cải xanh, hành, tỏi, gừng, hành tây, gia vị, mì hoặc bún, trứng, mỡ heo, bột ngọt, tiêu, nước mắm, hành phi.", R.drawable.lau, 259000);
 //            Food food8 = new Food("Nuộm", "Nuộm là một món ăn truyền thống của miền Trung Việt Nam, thành phần thường gồm thịt heo, thịt bò hoặc gà, nước mắm, đường, muối, tiêu, tỏi, ớt, lá chanh, rau sống, bún, bánh tráng, hành, ớt, hành tây, dứa, ngò gai, mắm tôm, mỡ heo, gia vị.", R.drawable.nuom, 30000);
 //            Food food9 = new Food("Nướng", "Thịt nướng là món ăn truyền thống, thịt được chiên hoặc nướng đến khi chín, có mùi thơm hấp dẫn, vị ngọt mặn, mềm mịn. Thường được ướp gia vị như tỏi, hành, ớt, muối, tiêu, nước mắm, đường.", R.drawable.nuong, 100000);
-
             if(insFood(food1) == -1 || insFood(food2) == -1) {
                 Toast.makeText(this.context, "insert fail", Toast.LENGTH_SHORT).show();
             }

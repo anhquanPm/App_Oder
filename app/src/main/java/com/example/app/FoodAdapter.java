@@ -1,6 +1,9 @@
 package com.example.app;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -72,9 +75,9 @@ public class FoodAdapter extends BaseAdapter {
         }
         holder.textName.setText(food.getName());
         holder.textPrice.setText(String.valueOf(food.getPrice()));
-        int resId = ((FoodList)context).getResources().getIdentifier("", "drawable", ((FoodList)context).getPackageName());
+//        String idname = food.getImageName();
+        int resId = ((FoodList)context).getResources().getIdentifier("caran", "drawable", ((FoodList)context).getPackageName());
         holder.imageFood.setImageResource(resId);
-//        holder.imageFood.setImageResource(food.getResourceIdPicture());
         return  convertView;
     }
 }
