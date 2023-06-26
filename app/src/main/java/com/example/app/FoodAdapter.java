@@ -1,6 +1,9 @@
 package com.example.app;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,8 +47,6 @@ public class FoodAdapter extends BaseAdapter {
         TextView textName, textDonGia, textPrice, textAmount, textThanhTien, textViewTongTien;
         ImageButton buttonAdd, buttonDelete;
         Button buttonShowMore;
-        private int SL = 0;
-        private int Price = 1;
     }
 
     @Override
@@ -74,29 +75,9 @@ public class FoodAdapter extends BaseAdapter {
         }
         holder.textName.setText(food.getName());
         holder.textPrice.setText(String.valueOf(food.getPrice()));
-        holder.textViewTongTien.setText(String.valueOf(0));
-        int resId = ((FoodList)context).getResources().getIdentifier("", "drawable", ((FoodList)context).getPackageName());
+//        String idname = food.getImageName();
+        int resId = ((FoodList)context).getResources().getIdentifier("caran", "drawable", ((FoodList)context).getPackageName());
         holder.imageFood.setImageResource(resId);
-
-        holder.buttonAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                holder.SL++;
-                holder.textAmount.setText(String.valueOf(holder.SL));
-                holder.textViewTongTien.setText(String.valueOf(holder.SL * food.getPrice()));
-            }
-        });
-
-        holder.buttonDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(holder.SL > 0) {
-                    holder.SL--;
-                    holder.textAmount.setText(String.valueOf(holder.SL));
-                    holder.textViewTongTien.setText(String.valueOf(holder.SL * food.getPrice()));
-                }
-            }
-        });
         return  convertView;
     }
 }
