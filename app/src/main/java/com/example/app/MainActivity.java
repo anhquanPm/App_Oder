@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button btn_datMonNgay;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
             getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xff00DDED));
         }
         getView();
+
+
         btn_datMonNgay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -39,8 +39,9 @@ public class SettingAcivity extends AppCompatActivity {
             public void onClick(View view) {
                 int key = Integer.parseInt(edt_nhapKey.getText().toString());
                 if(key == KEY){
-//                    Intent intent = new Intent(SettingAcivity.this, );
-                    Toast.makeText(SettingAcivity.this, "Đúng mã", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(SettingAcivity.this, ThemSuaXoa.class);
+                    startActivity(intent);
+
                 }else{
                     Toast.makeText(SettingAcivity.this, "Key không chính xác", Toast.LENGTH_SHORT).show();
                     edt_nhapKey.setText("");

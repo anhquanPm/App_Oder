@@ -8,7 +8,9 @@
     <ListView
         android:id="@+id/listFood"
         android:layout_width="411dp"
-        android:layout_height="474dp" />
+        android:layout_height="474dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"

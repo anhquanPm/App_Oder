@@ -3,10 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".AddFood">
 
     <EditText
-        android:id="@+id/editTextText3"
+        android:id="@+id/editTextMoTa"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -60,7 +61,7 @@
         android:background="@null"
         android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText3"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMoTa"
         app:srcCompat="@drawable/baseline_photo_camera_24" />
 
     <EditText
@@ -117,6 +118,6 @@
         android:background="@null"
         android:scaleType="fitXY"
         app:layout_constraintStart_toEndOf="@+id/imageLoadFolder"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText3"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMoTa"
         app:srcCompat="@drawable/baseline_image_24" />
 </androidx.constraintlayout.widget.ConstraintLayout>
