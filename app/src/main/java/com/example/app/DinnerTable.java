@@ -28,6 +28,7 @@ public class DinnerTable extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                button1.setBackgroundColor(getResources().getColor(R.color.red));
                 Intent intent = new Intent(DinnerTable.this, FoodList.class);
                 startActivity(intent);
             }
