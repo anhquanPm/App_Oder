@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Sua_food">
+
+    <EditText
+        android:id="@+id/editTextMoTaSua"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Nhập mô tả món ăn"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextGiaTienSua" />
+
+    <Button
+        android:id="@+id/buttonHuySua"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="69dp"
+        android:text="Hủy"
+        app:layout_constraintStart_toEndOf="@+id/buttonThemSua"
+        app:layout_constraintTop_toBottomOf="@+id/imageMonAnSua" />
+
+    <Button
+        android:id="@+id/buttonThemSua"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="69dp"
+        android:text="Hoàn thành"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageMonAnSua" />
+
+    <ImageButton
+        android:id="@+id/imageLoadFolderSua"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp"
+        android:background="@null"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageCameraSua"
+        app:srcCompat="@drawable/folder_upload_24" />
+
+    <ImageButton
+        android:id="@+id/imageCameraSua"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="49dp"
+        android:background="@null"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMoTaSua"
+        app:srcCompat="@drawable/baseline_photo_camera_24" />
+
+    <EditText
+        android:id="@+id/editTextGiaTienSua"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Nhập giá tiền"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTenMonSua" />
+
+    <EditText
+        android:id="@+id/editTextTenMonSua"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Nhập tên món ăn"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="Sửa món ăn"
+        android:textColor="@color/blue"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageMonAnSua"
+        android:layout_width="193dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="30dp"
+        android:background="@null"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toEndOf="@+id/imageLoadFolderSua"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMoTaSua"
+        app:srcCompat="@drawable/baseline_image_24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
