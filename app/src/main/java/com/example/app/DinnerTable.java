@@ -1,7 +1,9 @@
 package com.example.app;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -32,45 +34,140 @@ public class DinnerTable extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                button1.setBackgroundColor(getResources().getColor(R.color.red));
-                Intent intent = new Intent(DinnerTable.this, FoodList.class);
-                startActivity(intent);
+                if(((ColorDrawable)(( button1).getBackground())).getColor() == getResources().getColor(R.color.red)){
+                    AlertDialog.Builder adb = new AlertDialog.Builder(DinnerTable.this);
+                    adb.setTitle("Thông báo");
+                    adb.setMessage("Khách đã trả bàn?");
+                    adb.setPositiveButton("Đúng", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            button1.setBackgroundColor(getResources().getColor(R.color.blue));
+                        }
+                    });
+                    adb.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    });
+                    adb.show();
+                }
+                else {
+                    button1.setBackgroundColor(getResources().getColor(R.color.red));
+                    Intent intent = new Intent(DinnerTable.this, FoodList.class);
+                    startActivity(intent);
+                }
             }
         });
 
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                button2.setBackgroundColor(getResources().getColor(R.color.red));
-                Intent intent = new Intent(DinnerTable.this, FoodList.class);
-                startActivity(intent);
+                if(((ColorDrawable)(( button2).getBackground())).getColor() == getResources().getColor(R.color.red)){
+                    AlertDialog.Builder adb = new AlertDialog.Builder(DinnerTable.this);
+                    adb.setTitle("Thông báo");
+                    adb.setMessage("Khách đã trả bàn?");
+                    adb.setPositiveButton("Đúng", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            button2.setBackgroundColor(getResources().getColor(R.color.blue));
+                        }
+                    });
+                    adb.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    });
+                    adb.show();
+                }
+                else {
+                    button2.setBackgroundColor(getResources().getColor(R.color.red));
+                    Intent intent = new Intent(DinnerTable.this, FoodList.class);
+                    startActivity(intent);
+                }
             }
         });
 
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                button3.setBackgroundColor(getResources().getColor(R.color.red));
-                Intent intent = new Intent(DinnerTable.this, FoodList.class);
-                startActivity(intent);
+                if(((ColorDrawable)(( button3).getBackground())).getColor() == getResources().getColor(R.color.red)){
+                    AlertDialog.Builder adb = new AlertDialog.Builder(DinnerTable.this);
+                    adb.setTitle("Thông báo");
+                    adb.setMessage("Khách đã trả bàn?");
+                    adb.setPositiveButton("Đúng", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            button3.setBackgroundColor(getResources().getColor(R.color.blue));
+                        }
+                    });
+                    adb.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    });
+                    adb.show();
+                }
+                else {
+                    button3.setBackgroundColor(getResources().getColor(R.color.red));
+                    Intent intent = new Intent(DinnerTable.this, FoodList.class);
+                    startActivity(intent);
+                }
             }
         });
 
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                button4.setBackgroundColor(getResources().getColor(R.color.red));
-                Intent intent = new Intent(DinnerTable.this, FoodList.class);
-                startActivity(intent);
+                if(((ColorDrawable)(( button4).getBackground())).getColor() == getResources().getColor(R.color.red)){
+                    AlertDialog.Builder adb = new AlertDialog.Builder(DinnerTable.this);
+                    adb.setTitle("Thông báo");
+                    adb.setMessage("Khách đã trả bàn?");
+                    adb.setPositiveButton("Đúng", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            button4.setBackgroundColor(getResources().getColor(R.color.blue));
+                        }
+                    });
+                    adb.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    });
+                    adb.show();
+                }
+                else {
+                    button4.setBackgroundColor(getResources().getColor(R.color.red));
+                    Intent intent = new Intent(DinnerTable.this, FoodList.class);
+                    startActivity(intent);
+                }
             }
         });
 
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                button5.setBackgroundColor(getResources().getColor(R.color.red));
-                Intent intent = new Intent(DinnerTable.this, FoodList.class);
-                startActivity(intent);
+                if(((ColorDrawable)(( button5).getBackground())).getColor() == getResources().getColor(R.color.red)){
+                    AlertDialog.Builder adb = new AlertDialog.Builder(DinnerTable.this);
+                    adb.setTitle("Thông báo");
+                    adb.setMessage("Khách đã trả bàn?");
+                    adb.setPositiveButton("Đúng", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            button5.setBackgroundColor(getResources().getColor(R.color.blue));
+                        }
+                    });
+                    adb.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    });
+                    adb.show();
+                }
+                else {
+                    button5.setBackgroundColor(getResources().getColor(R.color.red));
+                    Intent intent = new Intent(DinnerTable.this, FoodList.class);
+                    startActivity(intent);
+                }
             }
         });
 
