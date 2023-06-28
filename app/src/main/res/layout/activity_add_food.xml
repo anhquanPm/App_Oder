@@ -7,7 +7,7 @@
     tools:context=".AddFood">
 
     <EditText
-        android:id="@+id/editTextMoTa"
+        android:id="@+id/editTextMoTaSua"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -18,30 +18,30 @@
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextGiaTien" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextGiaTienSua" />
 
     <Button
-        android:id="@+id/buttonHuy"
+        android:id="@+id/buttonHuySua"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="69dp"
         android:layout_marginEnd="80dp"
         android:text="Hủy"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageMonAn" />
+        app:layout_constraintTop_toBottomOf="@+id/imageMonAnSua" />
 
     <Button
-        android:id="@+id/buttonThem"
+        android:id="@+id/buttonThemSua"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:layout_marginTop="69dp"
         android:text="Thêm"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageMonAn" />
+        app:layout_constraintTop_toBottomOf="@+id/imageMonAnSua" />
 
     <ImageButton
-        android:id="@+id/imageLoadFolder"
+        android:id="@+id/imageLoadFolderSua"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -49,11 +49,11 @@
         android:background="@null"
         android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageCamera"
+        app:layout_constraintTop_toBottomOf="@+id/imageCameraSua"
         app:srcCompat="@drawable/folder_upload_24" />
 
     <ImageButton
-        android:id="@+id/imageCamera"
+        android:id="@+id/imageCameraSua"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -61,11 +61,11 @@
         android:background="@null"
         android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextMoTa"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMoTaSua"
         app:srcCompat="@drawable/baseline_photo_camera_24" />
 
     <EditText
-        android:id="@+id/editTextGiaTien"
+        android:id="@+id/editTextGiaTienSua"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -76,10 +76,10 @@
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTenMon" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTenMonSua" />
 
     <EditText
-        android:id="@+id/editTextTenMon"
+        android:id="@+id/editTextTenMonSua"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -110,14 +110,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageMonAn"
+        android:id="@+id/imageMonAnSua"
         android:layout_width="193dp"
         android:layout_height="120dp"
         android:layout_marginStart="57dp"
         android:layout_marginTop="31dp"
         android:background="@null"
         android:scaleType="fitXY"
-        app:layout_constraintStart_toEndOf="@+id/imageLoadFolder"
-        app:layout_constraintTop_toBottomOf="@+id/editTextMoTa"
+        app:layout_constraintStart_toEndOf="@+id/imageLoadFolderSua"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMoTaSua"
         app:srcCompat="@drawable/baseline_image_24" />
 </androidx.constraintlayout.widget.ConstraintLayout>

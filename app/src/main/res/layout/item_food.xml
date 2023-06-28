@@ -121,7 +121,6 @@
             android:layout_width="113dp"
             android:layout_height="wrap_content"
             android:background="@color/green"
-            android:drawableLeft="@drawable/info_fill0_wght400_grad0_opsz48"
             android:text="Chi tiết"
             android:textColor="@color/white"
             android:textSize="10sp" />

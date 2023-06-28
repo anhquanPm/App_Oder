@@ -6,7 +6,6 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.print.PageRange;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
@@ -97,13 +96,13 @@ public class AddFood extends AppCompatActivity {
         }
     }
     public void getViews() {
-        this.btnAdd = findViewById(R.id.buttonThem);
-        this.btnDelete = findViewById(R.id.buttonHuy);
-        this.editTen = findViewById(R.id.editTextTenMon);
-        this.editMoTa = findViewById(R.id.editTextMoTa);
-        this.editTien = findViewById(R.id.editTextGiaTien);
-        this.btnCamera = findViewById(R.id.imageCamera);
-        this.btnLoadFolder = findViewById(R.id.imageLoadFolder);
-        this.imageHinh = findViewById(R.id.imageMonAn);
+        this.btnAdd = findViewById(R.id.buttonThemSua);
+        this.btnDelete = findViewById(R.id.buttonHuySua);
+        this.editTen = findViewById(R.id.editTextTenMonSua);
+        this.editMoTa = findViewById(R.id.editTextMoTaSua);
+        this.editTien = findViewById(R.id.editTextGiaTienSua);
+        this.btnCamera = findViewById(R.id.imageCameraSua);
+        this.btnLoadFolder = findViewById(R.id.imageLoadFolderSua);
+        this.imageHinh = findViewById(R.id.imageMonAnSua);
     }
 }

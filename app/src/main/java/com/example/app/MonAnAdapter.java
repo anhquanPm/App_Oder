@@ -1,6 +1,7 @@
 package com.example.app;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
@@ -76,6 +77,15 @@ public class MonAnAdapter extends BaseAdapter {
         byte[] hinhanh = monAn.getHinh();
         Bitmap bitmap = BitmapFactory.decodeByteArray(hinhanh, 0, hinhanh.length);
         holder.imageMon.setImageBitmap(bitmap);
+
+        holder.buttonSua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, Sua_food.class);
+                intent.putExtra(Sua_food.ID_FOOD, (int)position);
+                context.startActivity(intent);
+            }
+        });
 
         return convertView;
     }
