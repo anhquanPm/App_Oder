@@ -45,6 +45,7 @@ public class MenuAdapter extends BaseAdapter{
         TextView textFood, textPrice, price, amount, ThanhTien, textTiien;
         ImageButton buttonAdd, buttonDelete;
         Button buttonShowMore;
+        int SL = 0;
 
     }
 
@@ -79,6 +80,26 @@ public class MenuAdapter extends BaseAdapter{
         byte[] hinhanh = monAn.getHinh();
         Bitmap bitmap = BitmapFactory.decodeByteArray(hinhanh, 0, hinhanh.length);
         holder.imageFood.setImageBitmap(bitmap);
+
+        holder.buttonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                holder.SL++;
+                holder.amount.setText(String.valueOf(holder.SL));
+                holder.textTiien.setText(String.valueOf(holder.SL * monAn.getGia()));
+            }
+        });
+
+        holder.buttonDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(holder.SL > 0) {
+                    holder.SL--;
+                    holder.amount.setText(String.valueOf(holder.SL));
+                    holder.textTiien.setText(String.valueOf(holder.SL * monAn.getGia()));
+                }
+            }
+        });
 
         return convertView;
     }
