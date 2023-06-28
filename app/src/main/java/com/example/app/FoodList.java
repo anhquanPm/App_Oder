@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,6 +24,7 @@ public class FoodList extends AppCompatActivity {
     ArrayList<MonAn> arrayMonAn;
     MenuAdapter adapter;
     public static Database database;
+
 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +53,8 @@ public class FoodList extends AppCompatActivity {
             ));
         }
         adapter.notifyDataSetChanged();
+
+
 
     }
 

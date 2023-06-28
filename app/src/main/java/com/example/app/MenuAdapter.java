@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MenuAdapter extends BaseAdapter{
@@ -24,6 +25,8 @@ public class MenuAdapter extends BaseAdapter{
         this.context = context;
         this.monAnList = monAnList;
     }
+
+
 
     @Override
     public int getCount() {
@@ -46,6 +49,7 @@ public class MenuAdapter extends BaseAdapter{
         ImageButton buttonAdd, buttonDelete;
         Button buttonShowMore;
         int SL = 0;
+        int totalPriceHolder = 0;
 
     }
 
@@ -71,7 +75,6 @@ public class MenuAdapter extends BaseAdapter{
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-
         MonAn monAn = this.monAnList.get(position);
 
         holder.textFood.setText(monAn.getTen());
@@ -86,7 +89,9 @@ public class MenuAdapter extends BaseAdapter{
             public void onClick(View v) {
                 holder.SL++;
                 holder.amount.setText(String.valueOf(holder.SL));
-                holder.textTiien.setText(String.valueOf(holder.SL * monAn.getGia()));
+                holder.totalPriceHolder = holder.SL * monAn.getGia();
+                holder.textTiien.setText(String.valueOf(holder.totalPriceHolder));
+
             }
         });
 
@@ -96,7 +101,8 @@ public class MenuAdapter extends BaseAdapter{
                 if(holder.SL > 0) {
                     holder.SL--;
                     holder.amount.setText(String.valueOf(holder.SL));
-                    holder.textTiien.setText(String.valueOf(holder.SL * monAn.getGia()));
+                    holder.totalPriceHolder = holder.SL * monAn.getGia();
+                    holder.textTiien.setText(String.valueOf(holder.totalPriceHolder));
                 }
             }
         });
