@@ -1,6 +1,7 @@
 package com.example.app;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
@@ -104,6 +105,15 @@ public class MenuAdapter extends BaseAdapter{
                     holder.totalPriceHolder = holder.SL * monAn.getGia();
                     holder.textTiien.setText(String.valueOf(holder.totalPriceHolder));
                 }
+            }
+        });
+
+        holder.buttonShowMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ShowMore.class);
+                intent.putExtra(ShowMore.FOOD_ID, (int) position);
+                context.startActivity(intent);
             }
         });
 
