@@ -21,9 +21,6 @@
             android:name=".SettingAcivity"
             android:exported="false" />
         <activity
-            android:name=".FoodList"
-            android:exported="false" />
-        <activity
             android:name=".DinnerTable"
             android:exported="false" />
         <activity
