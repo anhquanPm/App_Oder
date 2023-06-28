@@ -4,6 +4,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.AttributeSet;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -19,13 +21,12 @@ import java.util.ArrayList;
 public class FoodList extends AppCompatActivity {
 
     Button GioHang, ThanhToan;
-    TextView tongTien;
+    public static TextView tongTien;
     ListView danhsachMon;
     ArrayList<MonAn> arrayMonAn;
     MenuAdapter adapter;
     public static Database database;
-
-    int tong;
+    public static int tongtien = 0;
 
 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,7 +37,6 @@ public class FoodList extends AppCompatActivity {
         this.arrayMonAn = new ArrayList<>();
         this.adapter = new MenuAdapter(this, R.layout.item_food, arrayMonAn);
         this.danhsachMon.setAdapter(adapter);
-
 
 
         this.database = new Database(this, "QuanLyMonn.sqlite", null, 1);
@@ -53,13 +53,29 @@ public class FoodList extends AppCompatActivity {
                     cursor.getInt(3),
                     cursor.getBlob(4)
             ));
+
         }
     }
-
     public void getViews() {
         this.GioHang = findViewById(R.id.GioHang);
         this.ThanhToan = findViewById(R.id.ThanhToan);
         this.tongTien = findViewById(R.id.TongTien);
         this.danhsachMon = findViewById(R.id.listFood);
+    }
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_thuc_don, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.menu_thuc_don){
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    public static void tinhTongTien(int x){
+        tongtien+=x;
+        tongTien.setText(""+ tongtien);
     }
 }

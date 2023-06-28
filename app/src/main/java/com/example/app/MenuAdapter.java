@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Size;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -91,6 +92,7 @@ public class MenuAdapter extends BaseAdapter{
                 holder.amount.setText(String.valueOf(holder.SL));
                 holder.totalPriceHolder = holder.SL * monAn.getGia();
                 holder.textTiien.setText(String.valueOf(holder.totalPriceHolder));
+                FoodList.tinhTongTien(monAn.getGia());
             }
         });
 
@@ -102,6 +104,7 @@ public class MenuAdapter extends BaseAdapter{
                     holder.amount.setText(String.valueOf(holder.SL));
                     holder.totalPriceHolder = holder.SL * monAn.getGia();
                     holder.textTiien.setText(String.valueOf(holder.totalPriceHolder));
+                    FoodList.tinhTongTien(- (monAn.getGia()));
                 }
             }
         });
@@ -115,6 +118,9 @@ public class MenuAdapter extends BaseAdapter{
             }
         });
         return convertView;
+
+
     }
+
 
 }
