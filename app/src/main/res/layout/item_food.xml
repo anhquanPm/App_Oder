@@ -25,13 +25,13 @@
 
         <TextView
             android:id="@+id/textFood"
-            android:layout_width="96dp"
-            android:layout_height="34dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="16dp"
             android:gravity="center"
             android:text="Chả nem"
-            android:textColor="@color/blue"
+            android:textColor="@color/red"
             android:textSize="22sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/imageFood"
@@ -50,7 +50,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="8dp"
                 android:text="Đơn giá:"
-                android:textColor="@color/blue"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/imageFood"
                 app:layout_constraintTop_toBottomOf="@+id/textFood" />
 
@@ -61,7 +61,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="8dp"
                 android:text="20000"
-                android:textColor="@color/blue"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/textPrice"
                 app:layout_constraintTop_toBottomOf="@+id/textFood" />
@@ -111,24 +111,25 @@
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="181dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
 
         <Button
             android:id="@+id/buttonShowMore"
-            android:layout_width="113dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
             android:background="@color/green"
             android:text="Chi tiết"
             android:textColor="@color/white"
             android:textSize="10sp" />
 
         <LinearLayout
-            android:layout_marginTop="30dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="30dp">
 
             <TextView
                 android:id="@+id/ThanhTien"
@@ -150,14 +151,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
-                android:gravity="center"
                 android:text="0"
+                android:textColor="@color/black"
+                android:textStyle="bold"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </LinearLayout>
-
 
 
     </LinearLayout>

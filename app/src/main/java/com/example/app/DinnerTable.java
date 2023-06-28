@@ -25,10 +25,50 @@ public class DinnerTable extends AppCompatActivity {
         }
 
         Button button1 = findViewById(R.id.btn_banAn1);
+        Button button2 = findViewById(R.id.btn_banAn2);
+        Button button3 = findViewById(R.id.btn_banAn3);
+        Button button4 = findViewById(R.id.btn_banAn4);
+        Button button5 = findViewById(R.id.btn_banAn5);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 button1.setBackgroundColor(getResources().getColor(R.color.red));
+                Intent intent = new Intent(DinnerTable.this, FoodList.class);
+                startActivity(intent);
+            }
+        });
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button2.setBackgroundColor(getResources().getColor(R.color.red));
+                Intent intent = new Intent(DinnerTable.this, FoodList.class);
+                startActivity(intent);
+            }
+        });
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button3.setBackgroundColor(getResources().getColor(R.color.red));
+                Intent intent = new Intent(DinnerTable.this, FoodList.class);
+                startActivity(intent);
+            }
+        });
+
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button4.setBackgroundColor(getResources().getColor(R.color.red));
+                Intent intent = new Intent(DinnerTable.this, FoodList.class);
+                startActivity(intent);
+            }
+        });
+
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button5.setBackgroundColor(getResources().getColor(R.color.red));
                 Intent intent = new Intent(DinnerTable.this, FoodList.class);
                 startActivity(intent);
             }

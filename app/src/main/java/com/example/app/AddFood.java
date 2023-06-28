@@ -77,7 +77,7 @@ public class AddFood extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == REQUEST_CODE_CAMERA && resultCode == RESULT_OK) {
+        if(requestCode == REQUEST_CODE_CAMERA && resultCode == RESULT_OK && data != null) {
             Bundle extras = data.getExtras();
             Bitmap bitmap = (Bitmap) extras.get("data");
             this.imageHinh.setImageBitmap(bitmap);

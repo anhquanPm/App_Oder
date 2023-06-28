@@ -7,11 +7,13 @@
 
     <TextView
         android:id="@+id/textMoTa"
-        android:layout_width="262dp"
-        android:layout_height="104dp"
+        android:layout_width="228dp"
+        android:layout_height="86dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         android:text="Giò lụa, bún, rau sống, nước mắm, mỡ hành, hành lá, hành khô, hành ngâm, đậu phộng, chả, mướp đắng, rau sống, mè rang, tỏi, chanh, ớt, gia vị, nước mắm, tiêu, hành phi"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageMon"
@@ -36,8 +38,8 @@
         android:background="#F3EFEF"
         android:gravity="center"
         android:text="Chả nem"
-        android:textColor="@color/blue"
-        android:textSize="22sp"
+        android:textColor="@color/red"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageMon" />
@@ -46,11 +48,12 @@
         android:id="@+id/textGia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
         android:text="Giá:"
-        android:textColor="@color/blue"
-        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/tenMon"
         app:layout_constraintTop_toBottomOf="@+id/imageMon" />
 
@@ -58,32 +61,36 @@
         android:id="@+id/textGiaMonAn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
         android:text="20000"
-        android:textColor="@color/blue"
-        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/textGia"
         app:layout_constraintTop_toBottomOf="@+id/textMoTa" />
 
-    <Button
+    <ImageButton
         android:id="@+id/buttonSua"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
-        android:text="Sửa"
-        app:layout_constraintEnd_toStartOf="@+id/buttonXoa"
+        android:layout_width="41dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@null"
+        android:src="@drawable/edit_fill0_wght400_grad0_opsz48"
+        app:layout_constraintStart_toEndOf="@+id/textGiaMonAn"
         app:layout_constraintTop_toBottomOf="@+id/textMoTa" />
 
-    <Button
+    <ImageButton
         android:id="@+id/buttonXoa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="11dp"
-        android:text="Xóa"
+        android:layout_width="41dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@null"
+        android:src="@drawable/scan_delete_fill0_wght400_grad0_opsz48"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/buttonSua"
         app:layout_constraintTop_toBottomOf="@+id/textMoTa" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

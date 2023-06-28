@@ -21,12 +21,12 @@ public class MenuAdapter extends BaseAdapter{
     private Context context;
     private List<MonAn> monAnList;
 
+
     public MenuAdapter(Context context, int layout, List<MonAn> monAnList) {
         this.layout = layout;
         this.context = context;
         this.monAnList = monAnList;
     }
-
 
 
     @Override
@@ -51,7 +51,6 @@ public class MenuAdapter extends BaseAdapter{
         Button buttonShowMore;
         int SL = 0;
         int totalPriceHolder = 0;
-
     }
 
 
@@ -92,7 +91,6 @@ public class MenuAdapter extends BaseAdapter{
                 holder.amount.setText(String.valueOf(holder.SL));
                 holder.totalPriceHolder = holder.SL * monAn.getGia();
                 holder.textTiien.setText(String.valueOf(holder.totalPriceHolder));
-
             }
         });
 
@@ -116,7 +114,7 @@ public class MenuAdapter extends BaseAdapter{
                 context.startActivity(intent);
             }
         });
-
         return convertView;
     }
+
 }

@@ -62,8 +62,7 @@ public class ShowMore extends AppCompatActivity {
         this.buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ShowMore.this, FoodList.class);
-                startActivity(intent);
+                finish();
             }
         });
 

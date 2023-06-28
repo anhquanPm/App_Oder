@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,12 +17,12 @@ import java.util.List;
 
 public class MonAnAdapter extends BaseAdapter {
 
-    private Context context;
+    private ThemSuaXoa context;
     private int layout;
     private List<MonAn> monAnList;
 
-    public MonAnAdapter(Context context, int layout, List<MonAn> monAnList) {
-        this.context = context;
+    public MonAnAdapter(ThemSuaXoa context, int layout, List<MonAn> monAnList) {
+        this.context = (ThemSuaXoa) context;
         this.layout = layout;
         this.monAnList = monAnList;
     }
@@ -44,7 +45,7 @@ public class MonAnAdapter extends BaseAdapter {
     private class ViewHolder {
         ImageView imageMon;
         TextView textMoTa, tenMon, textGia, textGiaMonAn;
-        Button buttonSua, buttonXoa;
+        ImageButton buttonSua, buttonXoa;
 
     }
 
@@ -84,6 +85,20 @@ public class MonAnAdapter extends BaseAdapter {
                 Intent intent = new Intent(context, Sua_food.class);
                 intent.putExtra(Sua_food.ID_FOOD, (int)position);
                 context.startActivity(intent);
+            }
+        });
+
+        holder.buttonXoa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                context.DialogXoaCV(monAn.getTen(), monAn.getId());
+            }
+        });
+
+        holder.buttonSua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                context.DialogCapNhatCongViec(monAn.getTen(), monAn.getMoTa(), monAn.getGia(), monAn.getId());
             }
         });
 

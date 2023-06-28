@@ -25,6 +25,8 @@ public class FoodList extends AppCompatActivity {
     MenuAdapter adapter;
     public static Database database;
 
+    int tong;
+
 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,10 +54,6 @@ public class FoodList extends AppCompatActivity {
                     cursor.getBlob(4)
             ));
         }
-        adapter.notifyDataSetChanged();
-
-
-
     }
 
     public void getViews() {
