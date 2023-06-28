@@ -1,7 +1,9 @@
 package com.example.app;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.Menu;
@@ -27,13 +29,18 @@ public class FoodList extends AppCompatActivity {
     MenuAdapter adapter;
     public static Database database;
     public static int tongtien = 0;
+    public static String[] order;
+    public static String nhaBep;
+    public static int[] soLuong = new int[10000];
 
 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_list);
         this.getViews();
-
+        for(int i=0;i<10000;i++){
+            FoodList.soLuong[i]=0;
+        }
         this.arrayMonAn = new ArrayList<>();
         this.adapter = new MenuAdapter(this, R.layout.item_food, arrayMonAn);
         this.danhsachMon.setAdapter(adapter);
@@ -45,6 +52,8 @@ public class FoodList extends AppCompatActivity {
 
 
         Cursor cursor = database.GetData("SELECT * FROM MonAn");
+        order = new String[cursor.getCount()];
+        int k =0;
         while (cursor.moveToNext()) {
             arrayMonAn.add(new MonAn(
                     cursor.getInt(0),
@@ -53,11 +62,23 @@ public class FoodList extends AppCompatActivity {
                     cursor.getInt(3),
                     cursor.getBlob(4)
             ));
-
+            order[k] = cursor.getString(1);
+            k++;
         }
+
+        ThanhToan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent();
+                intent.setAction(Intent.ACTION_SENDTO);
+                intent.putExtra("sms_body",cmd());
+                intent.setData(Uri.parse("sms:"+ nhaBep));
+                startActivity(intent);
+            }
+        });
     }
     public void getViews() {
-        this.GioHang = findViewById(R.id.GioHang);
+        //this.GioHang = findViewById(R.id.GioHang);
         this.ThanhToan = findViewById(R.id.ThanhToan);
         this.tongTien = findViewById(R.id.TongTien);
         this.danhsachMon = findViewById(R.id.listFood);
@@ -77,5 +98,15 @@ public class FoodList extends AppCompatActivity {
     public static void tinhTongTien(int x){
         tongtien+=x;
         tongTien.setText(""+ tongtien);
+    }
+    public static void soluong(int i,int k){
+        soLuong[i]+=k;
+    }
+    public static String cmd(){
+        String cmd = "";
+        for(int i=0;i<order.length;i++){
+            cmd += "\n"+order[i]+": "+FoodList.soLuong[i];
+        }
+        return cmd;
     }
 }

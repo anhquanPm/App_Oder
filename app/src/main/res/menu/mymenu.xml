@@ -6,4 +6,9 @@
         android:icon="@drawable/settings_fill0_wght400_grad0_opsz48"
         android:title="Cài đặt"
         app:showAsAction="always" />
+    <item
+        android:id="@+id/sdt"
+        android:title="Nhà bếp"
+        android:icon="@drawable/nhabep"
+        app:showAsAction="always"/>
 </menu>

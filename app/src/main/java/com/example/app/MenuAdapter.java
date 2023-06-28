@@ -45,7 +45,7 @@ public class MenuAdapter extends BaseAdapter{
         return 0;
     }
 
-    private class ViewHolder {
+    public class ViewHolder {
         ImageView imageFood;
         TextView textFood, textPrice, price, amount, ThanhTien, textTiien;
         ImageButton buttonAdd, buttonDelete;
@@ -93,8 +93,10 @@ public class MenuAdapter extends BaseAdapter{
                 holder.totalPriceHolder = holder.SL * monAn.getGia();
                 holder.textTiien.setText(String.valueOf(holder.totalPriceHolder));
                 FoodList.tinhTongTien(monAn.getGia());
+                FoodList.soluong(position,1);
             }
         });
+
 
         holder.buttonDelete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,6 +107,9 @@ public class MenuAdapter extends BaseAdapter{
                     holder.totalPriceHolder = holder.SL * monAn.getGia();
                     holder.textTiien.setText(String.valueOf(holder.totalPriceHolder));
                     FoodList.tinhTongTien(- (monAn.getGia()));
+                    FoodList.soluong(position,-1);
+
+
                 }
             }
         });
