@@ -37,7 +37,7 @@ public class FoodList extends AppCompatActivity {
 
 
 
-        this.database = new Database(this, "QuanLyMon.sqlite", null, 1);
+        this.database = new Database(this, "QuanLyMonn.sqlite", null, 1);
 
         database.QueryData("CREATE TABLE IF NOT EXISTS MonAn(Id INTEGER PRIMARY KEY AUTOINCREMENT, Ten VARCHAR(150), MoTa VARCHAR(250), Gia INTEGER, HinhAnh BLOB)");
 
