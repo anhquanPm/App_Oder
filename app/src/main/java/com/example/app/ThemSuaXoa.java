@@ -56,6 +56,14 @@ public class ThemSuaXoa extends AppCompatActivity {
             }
         });
 
+        this.buttonThoat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ThemSuaXoa.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     public void getViews() {
