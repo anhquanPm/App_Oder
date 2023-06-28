@@ -34,6 +34,7 @@ public class DinnerTable extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                FoodList.tongtien = 0;
                 if(((ColorDrawable)(( button1).getBackground())).getColor() == getResources().getColor(R.color.red)){
                     AlertDialog.Builder adb = new AlertDialog.Builder(DinnerTable.this);
                     adb.setTitle("Thông báo");
@@ -62,6 +63,7 @@ public class DinnerTable extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                FoodList.tongtien = 0;
                 if(((ColorDrawable)(( button2).getBackground())).getColor() == getResources().getColor(R.color.red)){
                     AlertDialog.Builder adb = new AlertDialog.Builder(DinnerTable.this);
                     adb.setTitle("Thông báo");
@@ -90,6 +92,7 @@ public class DinnerTable extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                FoodList.tongtien = 0;
                 if(((ColorDrawable)(( button3).getBackground())).getColor() == getResources().getColor(R.color.red)){
                     AlertDialog.Builder adb = new AlertDialog.Builder(DinnerTable.this);
                     adb.setTitle("Thông báo");
@@ -118,6 +121,7 @@ public class DinnerTable extends AppCompatActivity {
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                FoodList.tongtien = 0;
                 if(((ColorDrawable)(( button4).getBackground())).getColor() == getResources().getColor(R.color.red)){
                     AlertDialog.Builder adb = new AlertDialog.Builder(DinnerTable.this);
                     adb.setTitle("Thông báo");
@@ -146,6 +150,7 @@ public class DinnerTable extends AppCompatActivity {
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                FoodList.tongtien = 0;
                 if(((ColorDrawable)(( button5).getBackground())).getColor() == getResources().getColor(R.color.red)){
                     AlertDialog.Builder adb = new AlertDialog.Builder(DinnerTable.this);
                     adb.setTitle("Thông báo");
