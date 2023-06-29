@@ -83,18 +83,6 @@ public class FoodList extends AppCompatActivity {
         this.tongTien = findViewById(R.id.TongTien);
         this.danhsachMon = findViewById(R.id.listFood);
     }
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_thuc_don, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId() == R.id.menu_thuc_don){
-
-        }
-        return super.onOptionsItemSelected(item);
-    }
     public static void tinhTongTien(int x){
         tongtien+=x;
         tongTien.setText(""+ tongtien);
@@ -105,7 +93,10 @@ public class FoodList extends AppCompatActivity {
     public static String cmd(){
         String cmd = "";
         for(int i=0;i<order.length;i++){
-            cmd += "\n"+order[i]+": "+FoodList.soLuong[i];
+            if(FoodList.soLuong[i] > 0) {
+                cmd += "\n"+order[i]+": "+FoodList.soLuong[i];
+            }
+
         }
         return cmd;
     }
