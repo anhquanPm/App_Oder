@@ -29,9 +29,11 @@ public class FoodList extends AppCompatActivity {
     MenuAdapter adapter;
     public static Database database;
     public static int tongtien = 0;
-    public static String[] order;
+    public static String[] order; // khai báo một mảng kí tự
     public static String nhaBep;
     public static int[] soLuong = new int[10000];
+
+    int k = 0;
 
 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -53,7 +55,7 @@ public class FoodList extends AppCompatActivity {
 
         Cursor cursor = database.GetData("SELECT * FROM MonAn");
         order = new String[cursor.getCount()];
-        int k =0;
+
         while (cursor.moveToNext()) {
             arrayMonAn.add(new MonAn(
                     cursor.getInt(0),
@@ -65,6 +67,7 @@ public class FoodList extends AppCompatActivity {
             order[k] = cursor.getString(1);
             k++;
         }
+        adapter.notifyDataSetChanged();
 
         ThanhToan.setOnClickListener(new View.OnClickListener() {
             @Override
