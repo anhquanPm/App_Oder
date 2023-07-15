@@ -21,11 +21,18 @@ public class MainActivity extends AppCompatActivity {
 
     SharedPreferences sharedPreferences ;
 
+    public static Database database;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        this.database = new Database(this, "QuanLyMonn.sqlite", null, 1);
+
+        database.QueryData("CREATE TABLE IF NOT EXISTS MonAn(Id INTEGER PRIMARY KEY AUTOINCREMENT, Ten VARCHAR(150), MoTa VARCHAR(250), Gia INTEGER, HinhAnh BLOB)");
+
         if(getSupportActionBar() != null){
             getSupportActionBar().setTitle("Order Food");
             getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xff00DDED));

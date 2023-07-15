@@ -61,7 +61,7 @@ public class AddFood extends AppCompatActivity {
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArray);
                 byte[] hinhAnh = byteArray.toByteArray();
 
-                ThemSuaXoa.database.INSERT_MOAN(
+                MainActivity.database.INSERT_MOAN(
                         editTen.getText().toString().trim(),
                         editMoTa.getText().toString().trim(),
                         Integer.parseInt(editTien.getText().toString().trim()),

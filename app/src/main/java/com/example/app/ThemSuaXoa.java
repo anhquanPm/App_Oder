@@ -35,7 +35,7 @@ public class ThemSuaXoa extends AppCompatActivity {
 
     ArrayList<MonAn> arrayMonAn;
     MonAnAdapter adapter;
-    public static Database database;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,12 +48,10 @@ public class ThemSuaXoa extends AppCompatActivity {
         this.danhSachMon.setAdapter(adapter);
 
 
-        this.database = new Database(this, "QuanLyMonn.sqlite", null, 1);
 
-        database.QueryData("CREATE TABLE IF NOT EXISTS MonAn(Id INTEGER PRIMARY KEY AUTOINCREMENT, Ten VARCHAR(150), MoTa VARCHAR(250), Gia INTEGER, HinhAnh BLOB)");
 
         //get data
-        Cursor cursor = database.GetData("SELECT * FROM MonAn");
+        Cursor cursor = MainActivity.database.GetData("SELECT * FROM MonAn");
         while (cursor.moveToNext()) {
             arrayMonAn.add(new MonAn(
                     cursor.getInt(0),
@@ -91,7 +89,7 @@ public class ThemSuaXoa extends AppCompatActivity {
 
     private void getData(){
         //get data
-        Cursor cursor = database.GetData("SELECT * FROM MonAn");
+        Cursor cursor = MainActivity.database.GetData("SELECT * FROM MonAn");
         arrayMonAn.clear();
         while (cursor.moveToNext()) {
             arrayMonAn.add(new MonAn(
@@ -111,7 +109,7 @@ public class ThemSuaXoa extends AppCompatActivity {
         dialogXoa.setPositiveButton("Có", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                database.QueryData("DELETE FROM MonAn WHERE Id ='"+id+"'");
+                MainActivity.database.QueryData("DELETE FROM MonAn WHERE Id ='"+id+"'");
                 Toast.makeText(ThemSuaXoa.this, "Đã Xóa "+ten, Toast.LENGTH_SHORT).show();
                 getData();
             }
@@ -148,7 +146,7 @@ public class ThemSuaXoa extends AppCompatActivity {
                 String tenMoi = editTextTenMonSua.getText().toString().trim();
                 String giaMoi = editTextGiaTienSua.getText().toString().trim();
                 String moTaMoi = editTextMoTaSua.getText().toString().trim();
-                database.QueryData("UPDATE MonAn SET Ten = '"+tenMoi+"', MoTa = '"+moTaMoi+"', Gia = '"+giaMoi+"' WHERE Id ='"+id+"'");
+                MainActivity.database.QueryData("UPDATE MonAn SET Ten = '"+tenMoi+"', MoTa = '"+moTaMoi+"', Gia = '"+giaMoi+"' WHERE Id ='"+id+"'");
                 Toast.makeText(ThemSuaXoa.this, "Đã cập nhật", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
                 getData();

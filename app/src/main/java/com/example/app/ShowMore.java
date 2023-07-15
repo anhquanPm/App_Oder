@@ -32,7 +32,7 @@ public class ShowMore extends AppCompatActivity {
 
 
         //get data
-        Cursor cursor = ThemSuaXoa.database.GetData("SELECT * FROM MonAn");
+        Cursor cursor = MainActivity.database.GetData("SELECT * FROM MonAn");
         while (cursor.moveToNext()) {
             arrayMonAn.add(new MonAn(
                     cursor.getInt(0),

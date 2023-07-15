@@ -48,7 +48,7 @@ public class FoodList extends AppCompatActivity {
 
 
 
-        Cursor cursor = ThemSuaXoa.database.GetData("SELECT * FROM MonAn");
+        Cursor cursor = MainActivity.database.GetData("SELECT * FROM MonAn");
         order = new String[cursor.getCount()];
 
         while (cursor.moveToNext()) {
