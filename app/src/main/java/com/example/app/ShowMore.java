@@ -20,9 +20,6 @@ public class ShowMore extends AppCompatActivity {
     ImageView imageShowMore;
     Button buttonBack;
     TextView nameFoodShowMore, textShowMore;
-
-    public static Database database;
-
     private ArrayList<MonAn> arrayMonAn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +29,10 @@ public class ShowMore extends AppCompatActivity {
         this.getViews();
         this.arrayMonAn = new ArrayList<>();
 
-        this.database = new Database(this, "QuanLyMonn.sqlite", null, 1);
 
-        database.QueryData("CREATE TABLE IF NOT EXISTS MonAn(Id INTEGER PRIMARY KEY AUTOINCREMENT, Ten VARCHAR(150), MoTa VARCHAR(250), Gia INTEGER, HinhAnh BLOB)");
 
         //get data
-        Cursor cursor = database.GetData("SELECT * FROM MonAn");
+        Cursor cursor = ThemSuaXoa.database.GetData("SELECT * FROM MonAn");
         while (cursor.moveToNext()) {
             arrayMonAn.add(new MonAn(
                     cursor.getInt(0),

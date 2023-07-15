@@ -27,7 +27,6 @@ public class FoodList extends AppCompatActivity {
     ListView danhsachMon;
     ArrayList<MonAn> arrayMonAn;
     MenuAdapter adapter;
-    public static Database database;
     public static int tongtien = 0;
     public static String[] order; // khai báo một mảng kí tự
     public static String nhaBep;
@@ -48,12 +47,8 @@ public class FoodList extends AppCompatActivity {
         this.danhsachMon.setAdapter(adapter);
 
 
-        this.database = new Database(this, "QuanLyMonn.sqlite", null, 1);
 
-        database.QueryData("CREATE TABLE IF NOT EXISTS MonAn(Id INTEGER PRIMARY KEY AUTOINCREMENT, Ten VARCHAR(150), MoTa VARCHAR(250), Gia INTEGER, HinhAnh BLOB)");
-
-
-        Cursor cursor = database.GetData("SELECT * FROM MonAn");
+        Cursor cursor = ThemSuaXoa.database.GetData("SELECT * FROM MonAn");
         order = new String[cursor.getCount()];
 
         while (cursor.moveToNext()) {
